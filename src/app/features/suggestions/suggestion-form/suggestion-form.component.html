@@ -1,0 +1,47 @@
+<section class="suggestion-form">
+  <h2>Ajouter une suggestion</h2>
+
+  <form [formGroup]="suggestionForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="title">Titre :</label>
+      <input id="title" type="text" formControlName="title" />
+      <div class="error" *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+        <div *ngIf="title?.errors?.['required']">Le titre est requis.</div>
+        <div *ngIf="title?.errors?.['minlength']">Le titre doit contenir au moins 5 caractères.</div>
+        <div *ngIf="title?.errors?.['pattern']">Le titre doit commencer par une majuscule et contenir uniquement des lettres.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description :</label>
+      <textarea id="description" rows="5" formControlName="description"></textarea>
+      <div class="error" *ngIf="description?.invalid && (description?.dirty || description?.touched)">
+        <div *ngIf="description?.errors?.['required']">La description est requise.</div>
+        <div *ngIf="description?.errors?.['minlength']">La description doit contenir au moins 30 caractères.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Catégorie :</label>
+      <select id="category" formControlName="category">
+        <option value="">-- Sélectionnez une catégorie --</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+      <div class="error" *ngIf="category?.invalid && (category?.dirty || category?.touched)">
+        <div *ngIf="category?.errors?.['required']">La catégorie est requise.</div>
+      </div>
+    </div>
+
+    <div class="form-group readonly-group">
+      <label>Date :</label>
+      <input type="text" [value]="today" readonly />
+    </div>
+
+    <div class="form-group readonly-group">
+      <label>Status :</label>
+      <input type="text" [value]="status" readonly />
+    </div>
+
+    <button type="submit" [disabled]="suggestionForm.invalid">Soumettre</button>
+  </form>
+</section>

@@ -11,6 +11,43 @@
   font-size: 2rem;
 }
 
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #2563eb;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.category {
+  font-size: 0.9rem;
+  color: #555;
+  background: #e2e8f0;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
 .suggestion-list ul {
   list-style: none;
   padding: 0;

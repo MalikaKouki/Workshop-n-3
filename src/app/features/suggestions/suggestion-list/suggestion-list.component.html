@@ -1,9 +1,17 @@
 <section class="suggestion-list">
-  <h2>Liste des suggestions</h2>
+  <div class="list-header">
+    <h2>Liste des suggestions</h2>
+    <button class="add-button" routerLink="new">Ajouter suggestion</button>
+  </div>
+
   <ul>
     <li *ngFor="let suggestion of suggestions">
-      <strong>{{ suggestion.title }}</strong>
+      <div class="item-header">
+        <strong>{{ suggestion.title }}</strong>
+        <span class="category">{{ suggestion.category }}</span>
+      </div>
       <p>{{ suggestion.description }}</p>
+      <p class="meta">Date : {{ suggestion.date }} • Statut : {{ suggestion.status }} • Likes : {{ suggestion.nbLikes }}</p>
       <a [routerLink]="[suggestion.id]">Détails</a>
     </li>
   </ul>
