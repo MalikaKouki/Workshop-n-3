@@ -1,0 +1,10 @@
+<section class="suggestion-list">
+  <h2>Liste des suggestions</h2>
+  <ul>
+    <li *ngFor="let suggestion of suggestions">
+      <strong>{{ suggestion.title }}</strong>
+      <p>{{ suggestion.description }}</p>
+      <a [routerLink]="[suggestion.id]">Détails</a>
+    </li>
+  </ul>
+</section>

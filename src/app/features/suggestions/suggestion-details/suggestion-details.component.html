@@ -1,0 +1,14 @@
+<section class="suggestion-details">
+  <h2>Détails de la suggestion</h2>
+
+  <ng-container *ngIf="suggestion; else missing">
+    <h3>{{ suggestion.title }}</h3>
+    <p>{{ suggestion.description }}</p>
+  </ng-container>
+
+  <ng-template #missing>
+    <p>Suggestion introuvable.</p>
+  </ng-template>
+
+  <button (click)="backToList()">Retour à la liste</button>
+</section>

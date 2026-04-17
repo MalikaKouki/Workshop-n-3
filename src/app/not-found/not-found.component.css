@@ -1,0 +1,33 @@
+.not-found-page {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  color: white;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found-page h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.not-found-page p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .not-found-page h1 {
+    font-size: 3rem;
+  }
+
+  .not-found-page p {
+    font-size: 1rem;
+  }
+}
